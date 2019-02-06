@@ -15,13 +15,7 @@ public class Main
             wordsArrayList.add(testStrSplit[i]);
         }
 
-        Collections.sort(wordsArrayList, new Comparator<String>()
-        {
-            public int compare (String o1, String o2)
-            {
-                return o1.compareToIgnoreCase(o2);
-            }
-        });//sorts the ArrayList
+        wordsArrayList.sort( (o1, o2) -> o1.compareToIgnoreCase(o2));//sorts the ArrayList
 
         ArrayList<WordContainer> wordsWordContainer = new ArrayList<>();
         String previousWord = "";
@@ -37,11 +31,11 @@ public class Main
                 count++;
                 continue;
             }
-            previousWord = word;
             WordContainer wordContainer = new WordContainer();
-            wordContainer.setWord(word);
+            wordContainer.setWord(previousWord);
             wordContainer.setCount(count);
             wordsWordContainer.add(wordContainer);
+            previousWord = word;
             count = 1;
         }//puts the String ArrayList into a new WordContainer class ArrayList
 
