@@ -47,7 +47,7 @@ public class Main
 
         Collections.sort(wordsWordContainer, new SortbyCount()); //implemented in WordContainer.java
 
-        count = 0; //repurposing this as it's defined above
+        count = 1; //repurposing this as it's defined above
         for (WordContainer w : wordsWordContainer)
         {
             if(count <= 50)
